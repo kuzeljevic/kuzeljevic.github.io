@@ -94,7 +94,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  max-width: 3000px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -254,6 +254,19 @@ window.addEventListener('wheel', e => {
     if (isScrolling) return;
     if (e.deltaY > 0) scrollToSection(current + 1); // scroll down
     else scrollToSection(current - 1);               // scroll up
+});
+
+let startY = 0;
+
+window.addEventListener('touchstart', e => {
+    startY = e.touches[0].clientY;
+});
+
+window.addEventListener('touchend', e => {
+    const endY = e.changedTouches[0].clientY;
+    if (isScrolling) return;
+    if (startY - endY > 50) scrollToSection(current + 1); // swipe up
+    else if (endY - startY > 50) scrollToSection(current - 1); // swipe down
 });
 </script>
 
