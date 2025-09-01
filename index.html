@@ -1,63 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math Classes</title>
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            scroll-behavior: smooth; /* smooth scrolling */
-            height: 100%;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math Classes</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* disable default scroll */
+  }
 
-        body {
-            scroll-snap-type: y mandatory; /* enable vertical snapping */
-            overflow-y: scroll;
-        }
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 2rem;
+    z-index: 10;
+  }
 
-        header {
-            position: sticky;
-            top: 0;
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1.5rem 0;
-            font-size: 2rem;
-            z-index: 10;
-        }
+  .section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+  }
 
-        section {
-            height: 100vh; /* full viewport height */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-            scroll-snap-align: start; /* snap each section to start */
-        }
+  .section:nth-child(2) { background-color: #2196F3; }
+  .section:nth-child(3) { background-color: #FF5722; }
+  .section:nth-child(4) { background-color: #9C27B0; }
+  .section:nth-child(5) { background-color: #FFC107; }
 
-        section:nth-child(2) { background-color: #2196F3; }
-        section:nth-child(3) { background-color: #FF5722; }
-        section:nth-child(4) { background-color: #9C27B0; }
-        section:nth-child(5) { background-color: #FFC107; }
-
-        @media (max-width: 600px) {
-            header { font-size: 1.5rem; }
-            section { font-size: 1.2rem; padding: 1rem; }
-        }
-    </style>
+  @media (max-width: 600px) {
+    header { font-size: 1.5rem; }
+    .section { font-size: 1.2rem; padding: 1rem; }
+  }
+</style>
 </head>
 <body>
 
 <header>Math Classes</header>
 
-<section>Section 1: Welcome to Math Classes</section>
-<section>Section 2: About Our Lessons</section>
-<section>Section 3: Schedule & Pricing</section>
-<section>Section 4: Contact Information</section>
+<div class="section">Section 1: Welcome to Math Classes</div>
+<div class="section">Section 2: About Our Lessons</div>
+<div class="section">Section 3: Schedule & Pricing</div>
+<div class="section">Section 4: Contact Information</div>
 
-</body>
-</html>
+<script>
+const sections = document.querySelectorAll('.section');
+let current = 0;
+let isScrolling = false;
+
+function scrollToSection(index) {
+    if (index < 0 || index >=
