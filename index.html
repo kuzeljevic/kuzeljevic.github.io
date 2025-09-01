@@ -59,4 +59,19 @@ let current = 0;
 let isScrolling = false;
 
 function scrollToSection(index) {
-    if (index < 0 || index >=
+    if (index < 0 || index >= sections.length) return;
+    isScrolling = true;
+    sections[index].scrollIntoView({ behavior: 'smooth' });
+    current = index;
+    setTimeout(() => { isScrolling = false; }, 800); // wait for scroll animation
+}
+
+window.addEventListener('wheel', e => {
+    if (isScrolling) return;
+    if (e.deltaY > 0) scrollToSection(current + 1); // scroll down
+    else scrollToSection(current - 1);               // scroll up
+});
+</script>
+
+</body>
+</html>
