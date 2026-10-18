@@ -312,6 +312,7 @@ footer {
       <a href="#former">Program</a>
       <a href="#projects">Registration</a>
       <a href="#workshops">Participants</a>
+      <a href="#local">Travel, accommodation, and local information</a>
       <a href="#seminars">History</a>
     </div>
 
@@ -356,7 +357,7 @@ footer {
 <!-- Program -->
 
   <section id="former" class="page">
-    <h2>Weekly Program</h2>
+    <h2>Program</h2>
 
     <div class="day">
       <h3>Monday</h3>
@@ -364,10 +365,22 @@ footer {
       <div class="event">
         <span class="time">10:00–11:00</span>
         <div>
-          <strong>Research Seminar</strong>
-          <p>Speaker: Name</p>
-          <p>Title of the talk</p>
-          <p>Room 1</p>
+          <strong>Marko Markovic</strong>
+          <p>Proper forcing</p>
+        </div>
+        <span class="time">11:00–12:00</span>
+        <div>
+          <strong>Petar Petrovic</strong>
+          <p>Small forcing</p>
+        </div>
+        <span class="time">12:00–13:00</span>
+        <div>
+          <strong>Pause</strong>
+        </div>
+        <span class="time">13:00–14:00</span>
+        <div>
+          <strong>Ivan Ivanovic</strong>
+          <p>Ultrafilters</p>
         </div>
       </div>
     </div>
@@ -377,38 +390,26 @@ footer {
     <h3>Tuesday</h3>
 
     <div class="event">
-      <span class="time">12:00–13:00</span>
-      <div>
-        <strong>Set Theory Seminar</strong>
-        <p>Speaker: Name</p>
-        <p>Title of the talk</p>
+        <span class="time">10:00–11:00</span>
+        <div>
+          <strong>Marko Markovic</strong>
+          <p>Proper forcing</p>
+        </div>
+        <span class="time">11:00–12:00</span>
+        <div>
+          <strong>Petar Petrovic</strong>
+          <p>Small forcing</p>
+        </div>
+        <span class="time">12:00–13:00</span>
+        <div>
+          <strong>Pause</strong>
+        </div>
+        <span class="time">13:00–14:00</span>
+        <div>
+          <strong>Ivan Ivanovic</strong>
+          <p>Ultrafilters</p>
+        </div>
       </div>
-    </div>
-  </div>
-
-  <div class="day">
-    <h3>Wednesday</h3>
-
-    <div class="event">
-      <span class="time">10:00–12:00</span>
-      <div>
-        <strong>Working Group</strong>
-        <p>Discussion of current research projects.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="day">
-    <h3>Thursday</h3>
-
-    <div class="event">
-      <span class="time">14:00–15:00</span>
-      <div>
-        <strong>Topology Seminar</strong>
-        <p>Speaker: Name</p>
-        <p>Title of the talk</p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -417,6 +418,19 @@ footer {
 
   <section id="projects" class="page">
     Registration will be open early next year.
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="6cac35f8-68d7-4cdd-a076-d8ff948dad81"><br>
+      <p>Name and surname:<br>
+      <input type="text" name="name" required></p>
+      <p>Affiliation:<br>
+      <input type="text" name="affiliation" required></p>
+      <p>Email address:<br>
+      <input type="email" name="email" required></p>
+      <p>Any other relevant information:<br>
+      <textarea rows="6" cols="23" name="message" required></textarea></p>
+      <button type="submit">Submit</button>
+    </form>
   </section>
 
   <!-- Workshops -->
@@ -428,9 +442,27 @@ footer {
       <p>Marko Markovic</p>
       <p class="meta">University of Belgrade, Serbia</p>
     </article>
+
+    <article class="item">
+      <p>Petar Petrovic</p>
+      <p class="meta">University of Novi Sad, Serbia</p>
+    </article>
   </section>
 
-  <!-- Seminars -->
+  <section id="local" class="page">
+    <h2>Travel and accommodation</h2>
+
+    <article class="item">
+      <h3>Transportation</h3>
+      <p class="meta">Train, bus, plane.</p>
+    </article>
+
+    <article class="item">
+      <h3>Accommodation</h3>
+      <p class="meta">Hotels and guesthouses available.</p>
+    </article>
+
+  </section>
 
   <section id="seminars" class="page">
     <h2>Previous editions</h2>
