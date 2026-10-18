@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Novi Sad Research Group</title>
+<title>SETTOP 2027</title>
 
 <style>
 :root {
@@ -240,6 +240,45 @@ footer {
     font-weight: 600;
   }
 }
+
+
+.day {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.day h3 {
+  color: var(--accent);
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.event {
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.time {
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.event p {
+  margin: 3px 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+@media (max-width: 560px) {
+  .event {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+}
+
 </style>
 </head>
 
@@ -247,12 +286,12 @@ footer {
 
 <header>
   <h1>
-    Novi Sad Group in<br>
-    Set Theory, Model Theory and Topology
+    SETTOP 2027
   </h1>
 
   <div class="subtitle">
-    Mathematics Research Group
+    Novi Sad Conference in Set Theory, Model Theory and Topology <br>
+    August 23-26, 2027, University of Novi Sad <br>
   </div>
 </header>
 
@@ -269,11 +308,11 @@ footer {
     </button>
 
     <div class="menu-links" id="menu-links">
-      <a href="#members" class="active">Members</a>
-      <a href="#former">Former members</a>
-      <a href="#projects">Projects</a>
-      <a href="#workshops">Workshops</a>
-      <a href="#seminars">Seminars</a>
+      <a href="#members" class="active">Conference</a>
+      <a href="#former">Program</a>
+      <a href="#projects">Registration</a>
+      <a href="#workshops">Participants</a>
+      <a href="#seminars">History</a>
     </div>
 
   </div>
@@ -284,40 +323,28 @@ footer {
   <!-- Current members -->
 
   <section id="members" class="page active">
-    <h2>Members</h2>
+    <h2>Invited speakers</h2>
 
     <div class="members">
 
       <article class="member">
         <h3>Professor Name</h3>
         <p>Set Theory</p>
-        <p>
-          <a href="mailto:name@example.com">Email</a>
-        </p>
       </article>
 
       <article class="member">
         <h3>Researcher Name</h3>
         <p>Model Theory</p>
-        <p>
-          <a href="mailto:name@example.com">Email</a>
-        </p>
       </article>
 
       <article class="member">
         <h3>Researcher Name</h3>
         <p>Topology</p>
-        <p>
-          <a href="mailto:name@example.com">Email</a>
-        </p>
       </article>
 
       <article class="member">
         <h3>PhD Student Name</h3>
         <p>Set Theory and Topology</p>
-        <p>
-          <a href="mailto:name@example.com">Email</a>
-        </p>
       </article>
 
     </div>
@@ -325,64 +352,118 @@ footer {
 
   <!-- Former members -->
 
-  <section id="former" class="page">
-    <h2>Former members</h2>
 
-    <article class="item">
-      <h3>Former Member Name</h3>
-      <p>Position or affiliation during membership</p>
-      <p>Research interests: topology and set theory.</p>
-    </article>
-  </section>
+<!-- Program -->
+
+  <section id="former" class="page">
+    <h2>Weekly Program</h2>
+
+    <div class="day">
+      <h3>Monday</h3>
+
+      <div class="event">
+        <span class="time">10:00–11:00</span>
+        <div>
+          <strong>Research Seminar</strong>
+          <p>Speaker: Name</p>
+          <p>Title of the talk</p>
+          <p>Room 1</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day">
+    <h3>Tuesday</h3>
+
+    <div class="event">
+      <span class="time">12:00–13:00</span>
+      <div>
+        <strong>Set Theory Seminar</strong>
+        <p>Speaker: Name</p>
+        <p>Title of the talk</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="day">
+    <h3>Wednesday</h3>
+
+    <div class="event">
+      <span class="time">10:00–12:00</span>
+      <div>
+        <strong>Working Group</strong>
+        <p>Discussion of current research projects.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="day">
+    <h3>Thursday</h3>
+
+    <div class="event">
+      <span class="time">14:00–15:00</span>
+      <div>
+        <strong>Topology Seminar</strong>
+        <p>Speaker: Name</p>
+        <p>Title of the talk</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <!-- Research projects -->
 
   <section id="projects" class="page">
-    <h2>Research projects</h2>
-
-    <article class="item">
-      <h3>Project Title</h3>
-      <p class="meta">2025–2028 · Research project</p>
-      <p>
-        A short description of the project, its aims,
-        and the mathematical topics it investigates.
-      </p>
-      <p>Participants: Member Name, Member Name</p>
-    </article>
+    Registration will be open early next year.
   </section>
 
   <!-- Workshops -->
 
   <section id="workshops" class="page">
-    <h2>Workshops</h2>
+    <h2>List of participants</h2>
 
     <article class="item">
-      <h3>Workshop Title</h3>
-      <p class="meta">12–14 June 2027 · University or location</p>
-      <p>
-        A short description of the workshop and its topics.
-      </p>
-      <p>
-        <a href="mailto:name@example.com">
-          Contact the organisers
-        </a>
-      </p>
+      <p>Marko Markovic</p>
+      <p class="meta">University of Belgrade, Serbia</p>
     </article>
   </section>
 
   <!-- Seminars -->
 
   <section id="seminars" class="page">
-    <h2>Seminars</h2>
+    <h2>Previous editions</h2>
 
     <article class="item">
-      <h3>Seminar Title</h3>
-      <p class="meta">20 October 2026 · 14:00</p>
-      <p><strong>Speaker:</strong> Speaker Name</p>
-      <p><strong>Title:</strong> Title of the talk</p>
-      <p>
-        Abstract: A short description of the talk.
-      </p>
+      <h3><a href="https://sites.dmi.uns.ac.rs/settop/2024/index.html">SETTOP 2024</a></h3>
+      <p class="meta">Held August 19-22, 2024.</p>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://sites.dmi.uns.ac.rs/settop/2022/default.html">Young Set Theory 2022 & SETTOP 2022</a></h3>
+      <p class="meta">Held August 17-25, 2022.</p>
+    </article>
+
+
+    <article class="item">
+      <h3><a href="https://sites.dmi.uns.ac.rs/settop/2018/default.htm">SETTOP 2018</a></h3>
+      <p class="meta">Held July 2-5, 2018.</p>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://sites.dmi.uns.ac.rs/settop/2016/default.htm">SETTOP 2016</a></h3>
+      <p class="meta">Held June 20-23, 2016.</p>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://sites.dmi.uns.ac.rs/settop/2014/default.htm">SETTOP 2014</a></h3>
+      <p class="meta">Held August 18-21, 2014.</p>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://sites.dmi.uns.ac.rs/settop/2012/LogTop.html">LOGTOP</a></h3>
+      <p class="meta">Held September 5-8, 2012.</p>
     </article>
   </section>
 
