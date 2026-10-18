@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>SETTOP 2027</title>
+<link rel="icon" type="image/x-icon" href="sat.png" />
+</head>
 
 <style>
 :root {
@@ -279,19 +281,46 @@ footer {
   }
 }
 
+.title-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.site-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+@media (max-width: 560px) {
+  .title-container {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .site-logo {
+    width: 60px;
+    height: 60px;
+  }
+}
+
 </style>
-</head>
 
 <body>
 
 <header>
-  <h1>
-    SETTOP 2027
-  </h1>
+  <div class="title-container">
+    <img style="margin-left:-20px;" src="sat.png" alt="Research group logo" class="site-logo">
+    <h1 style="margin-left: -40px;">
+      SETTOP 2027
+    </h1>
+  </div>
 
   <div class="subtitle">
     Novi Sad Conference in Set Theory, Model Theory and Topology <br>
-    August 23-26, 2027, University of Novi Sad <br>
+    August 23-26, 2027, University of Novi Sad
   </div>
 </header>
 
@@ -312,7 +341,7 @@ footer {
       <a href="#former">Program</a>
       <a href="#projects">Registration</a>
       <a href="#workshops">Participants</a>
-      <a href="#local">Travel, accommodation, and local information</a>
+      <a href="#local">Travel and local info</a>
       <a href="#seminars">History</a>
     </div>
 
@@ -450,7 +479,6 @@ footer {
   </section>
 
   <section id="local" class="page">
-    <h2>Travel and accommodation</h2>
 
     <article class="item">
       <h3>Transportation</h3>
