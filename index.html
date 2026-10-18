@@ -4,7 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SETTOP</title>
+
+<title>Novi Sad Research Group</title>
 
 <style>
 :root {
@@ -16,21 +17,26 @@
   --width: 850px;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
   background: var(--background);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-               sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
   line-height: 1.65;
 }
 
-header, main, footer {
+header,
+main,
+footer {
   width: min(var(--width), calc(100% - 40px));
   margin-inline: auto;
 }
@@ -40,16 +46,18 @@ header {
   padding-bottom: 28px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: normal;
   line-height: 1.25;
 }
 
 h1 {
-  max-width: 720px;
+  max-width: 850px;
   margin: 0;
-  font-size: clamp(1.8rem, 5.4vw, 2.56rem);
+  font-size: clamp(2rem, 6vw, 3.2rem);
   letter-spacing: -0.035em;
 }
 
@@ -58,6 +66,8 @@ h1 {
   color: var(--muted);
   font-size: 1rem;
 }
+
+/* Navigation */
 
 nav {
   position: sticky;
@@ -70,16 +80,16 @@ nav {
 .nav-inner {
   width: min(var(--width), calc(100% - 40px));
   margin: auto;
-  display: flex;
-  gap: 25px;
-  overflow-x: auto;
-  scrollbar-width: none;
 }
 
-.nav-inner::-webkit-scrollbar { display: none; }
+.menu-links {
+  display: flex;
+  gap: 25px;
+}
 
 nav a {
   flex: 0 0 auto;
+  display: block;
   padding: 13px 0;
   color: var(--muted);
   text-decoration: none;
@@ -87,9 +97,25 @@ nav a {
 }
 
 nav a:hover,
-nav a.active { color: var(--accent); }
+nav a.active {
+  color: var(--accent);
+}
 
-nav a.active { box-shadow: inset 0 -2px var(--accent); }
+nav a.active {
+  box-shadow: inset 0 -2px var(--accent);
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+  padding: 12px 0;
+}
+
+/* Main content */
 
 main {
   min-height: 60vh;
@@ -97,8 +123,13 @@ main {
   padding-bottom: 70px;
 }
 
-.page { display: none; }
-.page.active { display: block; }
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
 
 h2 {
   font-size: 1.8rem;
@@ -109,6 +140,8 @@ h3 {
   font-size: 1.25rem;
   margin: 0 0 5px;
 }
+
+/* Members */
 
 .members {
   display: grid;
@@ -121,26 +154,35 @@ h3 {
   border-bottom: 1px solid var(--line);
 }
 
-.member p, .item p {
+.member p,
+.item p {
   margin: 3px 0;
   color: var(--muted);
   font-size: 0.94rem;
 }
 
-a { color: var(--accent); }
+a {
+  color: var(--accent);
+}
+
+/* Projects, workshops and seminars */
 
 .item {
   padding: 22px 0;
   border-bottom: 1px solid var(--line);
 }
 
-.item:first-of-type { padding-top: 0; }
+.item:first-of-type {
+  padding-top: 0;
+}
 
 .meta {
   margin-bottom: 8px !important;
   color: var(--accent) !important;
   font-size: 0.85rem !important;
 }
+
+/* Footer */
 
 footer {
   border-top: 1px solid var(--line);
@@ -149,22 +191,54 @@ footer {
   font-size: 0.85rem;
 }
 
+/* Mobile navigation and layout */
+
 @media (max-width: 560px) {
   header {
     padding-top: 38px;
     padding-bottom: 22px;
   }
 
-  header, main, footer,
+  header,
+  main,
+  footer,
   .nav-inner {
     width: calc(100% - 32px);
   }
 
-  .members { grid-template-columns: 1fr; }
+  main {
+    padding-top: 27px;
+  }
 
-  main { padding-top: 27px; }
+  .members {
+    grid-template-columns: 1fr;
+  }
 
-  .nav-inner { gap: 22px; }
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    padding-bottom: 10px;
+  }
+
+  .menu-links.open {
+    display: flex;
+  }
+
+  .menu-links a {
+    padding: 10px 0;
+    border-top: 1px solid var(--line);
+    box-shadow: none;
+  }
+
+  .menu-links a.active {
+    color: var(--accent);
+    font-weight: 600;
+  }
 }
 </style>
 </head>
@@ -172,60 +246,84 @@ footer {
 <body>
 
 <header>
-  <h1>Novi Sad conference in <br> Set Theory, Model Theory, and Topology</h1>
+  <h1>
+    Novi Sad Group in<br>
+    Set Theory, Model Theory and Topology
+  </h1>
+
   <div class="subtitle">
-    August 23-26, 2027 at the Department of Mathematics and Informatics, Faculty of Sciences, University of Novi Sad
+    Mathematics Research Group
   </div>
 </header>
 
 <nav>
   <div class="nav-inner">
-    <a href="#members" class="active">Invited Speakers</a>
-    <a href="#former">Program</a>
-    <a href="#projects">Registration</a>
-    <a href="#workshops">Organizers</a>
-    <a href="#seminars">Local and travel information</a>
+
+    <button
+      class="menu-toggle"
+      aria-expanded="false"
+      aria-controls="menu-links"
+      aria-label="Open navigation menu"
+      type="button">
+      ☰ Menu
+    </button>
+
+    <div class="menu-links" id="menu-links">
+      <a href="#members" class="active">Members</a>
+      <a href="#former">Former members</a>
+      <a href="#projects">Projects</a>
+      <a href="#workshops">Workshops</a>
+      <a href="#seminars">Seminars</a>
+    </div>
+
   </div>
 </nav>
 
 <main>
 
-  <!-- The homepage: keep this section minimal. -->
+  <!-- Current members -->
+
   <section id="members" class="page active">
     <h2>Members</h2>
 
     <div class="members">
+
       <article class="member">
-        <h3><a href="https://people.dmi.uns.ac.rs/~milos">Miloš Kurilić</a></h3>
-        <p>Professor</p>
-        <p>Department of Mathematics and Informatics, Faculty of Sciences, University of Novi Sad</a></p>
+        <h3>Professor Name</h3>
+        <p>Set Theory</p>
+        <p>
+          <a href="mailto:name@example.com">Email</a>
+        </p>
       </article>
 
       <article class="member">
-        <h3><a href="https://people.dmi.uns.ac.rs/~sobot">Boris Šobot</a></h3>
-        <p>Associate Professor</p>
-        <p>Department of Mathematics and Informatics, Faculty of Sciences, University of Novi Sad</a></p>
+        <h3>Researcher Name</h3>
+        <p>Model Theory</p>
+        <p>
+          <a href="mailto:name@example.com">Email</a>
+        </p>
       </article>
 
       <article class="member">
-        <h3><a href="https://people.dmi.uns.ac.rs/~borisha">Boriša Kuzeljević</a></h3>
-        <p>Associate Professor</p>
-        <p>Department of Mathematics and Informatics, Faculty of Sciences, University of Novi Sad</a></p>
+        <h3>Researcher Name</h3>
+        <p>Topology</p>
+        <p>
+          <a href="mailto:name@example.com">Email</a>
+        </p>
       </article>
 
       <article class="member">
-        <h3><a href="https://people.dmi.uns.ac.rs/~milošević">Stepan Milošević</a></h3>
-        <p>Research Assistant Professor</p>
-        <p>Mathematical Institute of the Serbian Academy of Sciences and Arts</p>
+        <h3>PhD Student Name</h3>
+        <p>Set Theory and Topology</p>
+        <p>
+          <a href="mailto:name@example.com">Email</a>
+        </p>
       </article>
 
-      <article class="member">
-        <h3><a href="https://people.dmi.uns.ac.rs/~milošević">Aleksandar Janjoš</a></h3>
-        <p>Teaching Assistant</p>
-        <p>Faculty of Technical Sciences, University of Novi Sad</p>
-      </article>
     </div>
   </section>
+
+  <!-- Former members -->
 
   <section id="former" class="page">
     <h2>Former members</h2>
@@ -233,9 +331,11 @@ footer {
     <article class="item">
       <h3>Former Member Name</h3>
       <p>Position or affiliation during membership</p>
-      <p>Research interests: topology, set theory.</p>
+      <p>Research interests: topology and set theory.</p>
     </article>
   </section>
+
+  <!-- Research projects -->
 
   <section id="projects" class="page">
     <h2>Research projects</h2>
@@ -251,6 +351,8 @@ footer {
     </article>
   </section>
 
+  <!-- Workshops -->
+
   <section id="workshops" class="page">
     <h2>Workshops</h2>
 
@@ -261,10 +363,14 @@ footer {
         A short description of the workshop and its topics.
       </p>
       <p>
-        <a href="mailto:name@example.com">Contact the organisers</a>
+        <a href="mailto:name@example.com">
+          Contact the organisers
+        </a>
       </p>
     </article>
   </section>
+
+  <!-- Seminars -->
 
   <section id="seminars" class="page">
     <h2>Seminars</h2>
@@ -283,18 +389,23 @@ footer {
 </main>
 
 <footer>
-  Mathematics Research Group
+  Novi Sad Group in Set Theory, Model Theory and Topology
 </footer>
 
 <script>
-const links = document.querySelectorAll("nav a");
+const links = document.querySelectorAll(".menu-links a");
 const pages = document.querySelectorAll(".page");
+const menuToggle = document.querySelector(".menu-toggle");
+const menuLinks = document.querySelector(".menu-links");
 
 function showPage() {
   const requested = location.hash.slice(1) || "members";
   const target = document.getElementById(requested);
-  const validTarget = target && target.classList.contains("page");
-  const pageId = validTarget ? requested : "members";
+
+  const pageId =
+    target && target.classList.contains("page")
+      ? requested
+      : "members";
 
   pages.forEach(page => {
     page.classList.toggle("active", page.id === pageId);
@@ -302,6 +413,7 @@ function showPage() {
 
   links.forEach(link => {
     const active = link.hash === "#" + pageId;
+
     link.classList.toggle("active", active);
 
     if (active) {
@@ -312,7 +424,34 @@ function showPage() {
   });
 }
 
-window.addEventListener("hashchange", showPage);
+function closeMenu() {
+  menuLinks.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Open navigation menu");
+  menuToggle.textContent = "☰ Menu";
+}
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = menuLinks.classList.toggle("open");
+
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Close navigation menu" : "Open navigation menu"
+  );
+
+  menuToggle.textContent = isOpen ? "✕ Close" : "☰ Menu";
+});
+
+links.forEach(link => {
+  link.addEventListener("click", closeMenu);
+});
+
+window.addEventListener("hashchange", () => {
+  showPage();
+  closeMenu();
+});
+
 showPage();
 </script>
 
