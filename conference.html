@@ -340,12 +340,13 @@ footer {
     </button>
 
     <div class="menu-links" id="menu-links">
-      <a href="#members" class="active">Conference</a>
-      <a href="#former">Program</a>
-      <a href="#projects">Registration</a>
-      <a href="#workshops">Participants</a>
+      <a href="#conference" class="active">Conference</a>
+      <a href="#program">Program</a>
+      <a href="#registration">Registration</a>
+      <a href="#participants">Participants</a>
       <a href="#local">Travel and local info</a>
-      <a href="#seminars">History</a>
+      <a href="#history">History</a>
+      <a href="#contact">Contact</a>
     </div>
 
   </div>
@@ -355,7 +356,7 @@ footer {
 
   <!-- Current members -->
 
-  <section id="members" class="page active">
+  <section id="conference" class="page active">
     <h2>Invited speakers</h2>
 
     <div class="members">
@@ -383,12 +384,7 @@ footer {
     </div>
   </section>
 
-  <!-- Former members -->
-
-
-<!-- Program -->
-
-  <section id="former" class="page">
+  <section id="program" class="page">
     <h2>Program</h2>
 
     <div class="day">
@@ -443,12 +439,10 @@ footer {
         </div>
       </div>
   </div>
-</section>
+  </section>
 
 
-  <!-- Research projects -->
-
-  <section id="projects" class="page">
+  <section id="registration" class="page">
     Registration will be open early next year.
 
     <form action="https://api.web3forms.com/submit" method="POST">
@@ -465,9 +459,7 @@ footer {
     </form>
   </section>
 
-  <!-- Workshops -->
-
-  <section id="workshops" class="page">
+  <section id="participants" class="page">
     <h2>List of participants</h2>
 
     <article class="item">
@@ -530,6 +522,20 @@ footer {
     </article>
   </section>
 
+  <section id="contact" class="page">
+    <h2>For all questions, please contact us at: settop@dmi.uns.ac.rs</h2>
+    
+    <h2>Our address is:</h2>  
+    <article class="item">
+      <p>Department of Mathematics and Informatics<br>
+        Faculty of Sciences<br>
+        University of Novi Sad<br>
+        Trg Dositeja Obradovića 4<br>
+        Novi Sad, Serbia<br>
+      </p>
+    </article>
+  </section>
+
 </main>
 
 <footer>
@@ -543,13 +549,13 @@ const menuToggle = document.querySelector(".menu-toggle");
 const menuLinks = document.querySelector(".menu-links");
 
 function showPage() {
-  const requested = location.hash.slice(1) || "members";
+  const requested = location.hash.slice(1) || "conference";
   const target = document.getElementById(requested);
 
   const pageId =
     target && target.classList.contains("page")
       ? requested
-      : "members";
+      : "conference";
 
   pages.forEach(page => {
     page.classList.toggle("active", page.id === pageId);
