@@ -284,44 +284,46 @@ footer {
 
 .title-container {
   display: flex;
-  align-items: center;
-  gap: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 .site-logo {
-  width: 100px;
-  height: 100px;
+  width: 240px;
+  height: auto;
   object-fit: contain;
-  flex-shrink: 0;
+  display: block;
 }
 
 @media (max-width: 560px) {
   .title-container {
-    align-items: flex-start;
     gap: 14px;
   }
 
   .site-logo {
-    width: 60px;
-    height: 60px;
+    width: 180px;
   }
 }
-
 </style>
 
 <body>
 
 <header>
   <div class="title-container">
-    <img style="margin-left:-20px;" src="sat.png" alt="Research group logo" class="site-logo">
-    <h1 style="margin-left: -40px;">
-      SE&#x22A8;OP 2027
-    </h1>
-  </div>
+    <a href="settop.html">
+    <img
+      style="margin-left: -10px;"
+      src="satt.png"
+      alt="SETTOP conference logo"
+      class="site-logo"
+    >
+    </a>
 
-  <div class="subtitle">
-    Novi Sad Conference in Set Theory, Model Theory and Topology <br>
-    August 23-26, 2027, University of Novi Sad
+    <div style="margin-top: -10px;" class="subtitle">
+      Novi Sad Conference in Set Theory, Model Theory and Topology <br>
+      August 23-26, 2027, University of Novi Sad
+    </div>
   </div>
 </header>
 
@@ -360,22 +362,22 @@ footer {
 
       <article class="member">
         <h3>Professor Name</h3>
-        <p>Set Theory</p>
+        <p>University of Novi Sad</p>
       </article>
 
       <article class="member">
         <h3>Researcher Name</h3>
-        <p>Model Theory</p>
+        <p>University of Novi Sad</p>
       </article>
 
       <article class="member">
         <h3>Researcher Name</h3>
-        <p>Topology</p>
+        <p>University of Novi Sad</p>
       </article>
 
       <article class="member">
         <h3>PhD Student Name</h3>
-        <p>Set Theory and Topology</p>
+        <p>University of Novi Sad</p>
       </article>
 
     </div>
@@ -498,33 +500,33 @@ footer {
 
     <article class="item">
       <h3><a href="https://sites.dmi.uns.ac.rs/settop/2024/index.html">SETTOP 2024</a></h3>
-      <p class="meta">Held August 19-22, 2024.</p>
+      <p class="meta">August 19-22, 2024.</p>
     </article>
 
     <article class="item">
       <h3><a href="https://sites.dmi.uns.ac.rs/settop/2022/default.html">Young Set Theory 2022 & SETTOP 2022</a></h3>
-      <p class="meta">Held August 17-25, 2022.</p>
+      <p class="meta">August 17-25, 2022.</p>
     </article>
 
 
     <article class="item">
       <h3><a href="https://sites.dmi.uns.ac.rs/settop/2018/default.htm">SETTOP 2018</a></h3>
-      <p class="meta">Held July 2-5, 2018.</p>
+      <p class="meta">July 2-5, 2018.</p>
     </article>
 
     <article class="item">
       <h3><a href="https://sites.dmi.uns.ac.rs/settop/2016/default.htm">SETTOP 2016</a></h3>
-      <p class="meta">Held June 20-23, 2016.</p>
+      <p class="meta">June 20-23, 2016.</p>
     </article>
 
     <article class="item">
       <h3><a href="https://sites.dmi.uns.ac.rs/settop/2014/default.htm">SETTOP 2014</a></h3>
-      <p class="meta">Held August 18-21, 2014.</p>
+      <p class="meta">August 18-21, 2014.</p>
     </article>
 
     <article class="item">
       <h3><a href="https://sites.dmi.uns.ac.rs/settop/2012/LogTop.html">LOGTOP</a></h3>
-      <p class="meta">Held September 5-8, 2012.</p>
+      <p class="meta">September 5-8, 2012.</p>
     </article>
   </section>
 
