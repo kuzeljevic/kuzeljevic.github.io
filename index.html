@@ -290,7 +290,7 @@ footer {
 }
 
 .site-logo {
-  width: 420px;
+  width: 360px;
   height: auto;
   object-fit: contain;
   display: block;
@@ -302,7 +302,7 @@ footer {
   }
 
   .site-logo {
-    width: 420px;
+    width: 360px;
   }
 }
 </style>
@@ -314,15 +314,14 @@ footer {
     <a href="index.html">
     <img
       style="margin-left: -20px;"
-      src="satt.png"
+      src="sattt.png"
       alt="SETTOP conference logo"
       class="site-logo"
     >
     </a>
 
-    <div style="margin-top: -30px;" class="subtitle">
-      Novi Sad Conference in Set Theory, Model Theory and Topology <br>
-      August 23-26, 2027, University of Novi Sad
+    <div style="margin-top: -10px;" class="subtitle">
+      Novi Sad group in Set Theory, Model Theory and Topology
     </div>
   </div>
 </header>
@@ -340,12 +339,13 @@ footer {
     </button>
 
     <div class="menu-links" id="menu-links">
-      <a href="#members" class="active">Conference</a>
-      <a href="#former">Program</a>
-      <a href="#projects">Registration</a>
-      <a href="#workshops">Participants</a>
-      <a href="#local">Travel and local info</a>
-      <a href="#seminars">History</a>
+      <a href="#news" class="active">News</a>
+      <a href="#members">Members</a>
+      <a href="#events">Events</a>
+      <a href="#seminar">Seminar</a>
+      <a href="#projects">Projects</a>
+      <a href="#topics">Research areas</a>
+      <a href="#contact">Contact</a>
     </div>
 
   </div>
@@ -353,150 +353,74 @@ footer {
 
 <main>
 
-  <!-- Current members -->
+  <section id="news" class="page active">
 
-  <section id="members" class="page active">
-    <h2>Invited speakers</h2>
+    <article class="item">
+      <p><a href="conference.html">SETTOP 2027</a> will be held in Novi Sad, Serbia, from August 13 to August 26, 2027.</p>
+    </article>
 
+  </section>
+
+  <section id="members" class="page">
+  
     <div class="members">
 
       <article class="member">
-        <h3>Professor Name</h3>
+        <h3>Miloš Kurilić</h3>
         <p>University of Novi Sad</p>
       </article>
 
       <article class="member">
-        <h3>Researcher Name</h3>
+        <h3>Boris Šobot</h3>
         <p>University of Novi Sad</p>
       </article>
 
       <article class="member">
-        <h3>Researcher Name</h3>
+        <h3>Boriša Kuzeljević</h3>
         <p>University of Novi Sad</p>
       </article>
 
       <article class="member">
-        <h3>PhD Student Name</h3>
+        <h3>Aleksandar Janjoš</h3>
+        <p>University of Novi Sad</p>
+      </article>
+
+      <article class="member">
+        <h3>Stepan Milošević</h3>
         <p>University of Novi Sad</p>
       </article>
 
     </div>
-  </section>
 
-  <!-- Former members -->
+    <h2 style="margin-top: 50px;">Former members</h2>
 
+    <div class="members">
+      <article class="member">
+        <h3>Milan Grulović</h3>
+      </article>
 
-<!-- Program -->
+      <article class="member">
+        <h3>Aleksandar Pavlović</h3>
+      </article>
 
-  <section id="former" class="page">
-    <h2>Program</h2>
+      <article class="member">
+        <h3>Bojan Bašić</h3>
+      </article>
 
-    <div class="day">
-      <h3>Monday</h3>
+      <article class="member">
+        <h3>Nenad Morača</h3>
+      </article>
 
-      <div class="event">
-        <span class="time">10:00–11:00</span>
-        <div>
-          <p>Marko Markovic</p>
-          <p class="meta">Proper forcing</p>
-        </div>
-        <span class="time">11:00–12:00</span>
-        <div>
-          <p>Petar Petrovic</p>
-          <p class="meta">Small forcing</p>
-        </div>
-        <span class="time">12:00–13:00</span>
-        <div>
-          <p>Pause</p>
-        </div>
-        <span class="time">13:00–14:00</span>
-        <div>
-          <p>Ivan Ivanovic</p>
-          <p class="meta">Ultrafilters</p>
-        </div>
-      </div>
+      <article class="member">
+        <h3>Anika Njamcul</h3>
+      </article>
+
     </div>
-  </div>
-
-  <div class="day">
-    <h3>Tuesday</h3>
-
-    <div class="event">
-        <span class="time">10:00–11:00</span>
-        <div>
-          <p>Marko Markovic</p>
-          <p class="meta">Proper forcing</p>
-        </div>
-        <span class="time">11:00–12:00</span>
-        <div>
-          <p>Petar Petrovic</p>
-          <p class="meta">Small forcing</p>
-        </div>
-        <span class="time">12:00–13:00</span>
-        <div>
-          <p>Pause</p>
-        </div>
-        <span class="time">13:00–14:00</span>
-        <div>
-          <p>Ivan Ivanovic</p>
-          <p class="meta">Ultrafilters</p>
-        </div>
-      </div>
-  </div>
-</section>
-
-
-  <!-- Research projects -->
-
-  <section id="projects" class="page">
-    Registration will be open early next year.
-
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="6cac35f8-68d7-4cdd-a076-d8ff948dad81"><br>
-      <p>Name and surname:<br>
-      <input type="text" name="name" required></p>
-      <p>Affiliation:<br>
-      <input type="text" name="affiliation" required></p>
-      <p>Email address:<br>
-      <input type="email" name="email" required></p>
-      <p>Any other relevant information:<br>
-      <textarea rows="6" cols="23" name="message" required></textarea></p>
-      <button type="submit">Submit</button>
-    </form>
-  </section>
-
-  <!-- Workshops -->
-
-  <section id="workshops" class="page">
-    <h2>List of participants</h2>
-
-    <article class="item">
-      <p>Marko Markovic</p>
-      <p class="meta">University of Belgrade, Serbia</p>
-    </article>
-
-    <article class="item">
-      <p>Petar Petrovic</p>
-      <p class="meta">University of Novi Sad, Serbia</p>
-    </article>
-  </section>
-
-  <section id="local" class="page">
-
-    <article class="item">
-      <h3>Transportation</h3>
-      <p class="meta">Train, bus, plane.</p>
-    </article>
-
-    <article class="item">
-      <h3>Accommodation</h3>
-      <p class="meta">Hotels and guesthouses available.</p>
-    </article>
 
   </section>
 
-  <section id="seminars" class="page">
-    <h2>Previous editions</h2>
+
+  <section id="events" class="page">
 
     <article class="item">
       <h3><a href="https://sites.dmi.uns.ac.rs/settop/2024/index.html">SETTOP 2024</a></h3>
@@ -530,6 +454,37 @@ footer {
     </article>
   </section>
 
+  <section id="seminar" class="page">
+    Next talks will be announced soon.
+  </section>
+
+  <section id="projects" class="page">
+    <article class="item">
+      <h3>SMART</h3>
+      <p>(Set-theoretic, model-theoretic and Ramsey-theoretic phenomena in mathematical structures: similarity and diversity)</p>
+      <p class="meta">Funded by the Science Fund of the Republic of Serbia, Grant No. 7750027</p>
+    </article>
+  </section>
+
+  <section id="topics" class="page">
+    <h2>Research areas</h2>
+
+    
+  </section>
+
+  <section id="contact" class="page">
+
+    <article class="item">
+      <p>Department of Mathematics and Informatics<br>
+        Faculty of Sciences<br>
+        University of Novi Sad<br>
+        Trg Dositeja Obradovića 4<br>
+        Novi Sad, Serbia<br>
+        E-mail : settop@dmi.uns.ac.rs
+      </p>
+    </article>
+  </section>
+
 </main>
 
 <footer>
@@ -543,13 +498,13 @@ const menuToggle = document.querySelector(".menu-toggle");
 const menuLinks = document.querySelector(".menu-links");
 
 function showPage() {
-  const requested = location.hash.slice(1) || "members";
+  const requested = location.hash.slice(1) || "news";
   const target = document.getElementById(requested);
 
   const pageId =
     target && target.classList.contains("page")
       ? requested
-      : "members";
+      : "news";
 
   pages.forEach(page => {
     page.classList.toggle("active", page.id === pageId);
