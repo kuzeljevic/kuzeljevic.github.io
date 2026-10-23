@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>SETTOP 2027</title>
+<link rel="icon" type="image/x-icon" href="sat.png" />
+
+</head>
+
+<style>
+:root {
+  --background: #faf9f6;
+  --text: #252d35;
+  --muted: #69736f;
+  --accent: #426b5b;
+  --line: #e5e4de;
+  --width: 850px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+header,
+main,
+footer {
+  width: min(var(--width), calc(100% - 40px));
+  margin-inline: auto;
+}
+
+header {
+  padding-top: 64px;
+  padding-bottom: 28px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+  line-height: 1.25;
+}
+
+h1 {
+  max-width: 850px;
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  letter-spacing: -0.035em;
+}
+
+.subtitle {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* Navigation */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--background);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-inner {
+  width: min(var(--width), calc(100% - 40px));
+  margin: auto;
+}
+
+.menu-links {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  flex: 0 0 auto;
+  display: block;
+  padding: 13px 0;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.91rem;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent);
+}
+
+nav a.active {
+  box-shadow: inset 0 -2px var(--accent);
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+  padding: 12px 0;
+}
+
+/* Main content */
+
+main {
+  min-height: 60vh;
+  padding-top: 35px;
+  padding-bottom: 70px;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin: 0 0 28px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin: 0 0 5px;
+}
+
+/* Members */
+
+.members {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 50px;
+}
+
+.member {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.member p,
+.item p {
+  margin: 3px 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+a {
+  color: var(--accent);
+}
+
+/* Projects, workshops and seminars */
+
+.item {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.item:first-of-type {
+  padding-top: 0;
+}
+
+.meta {
+  margin-bottom: 8px !important;
+  color: var(--accent) !important;
+  font-size: 0.85rem !important;
+}
+
+/* Footer */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 22px 0 35px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Mobile navigation and layout */
+
+@media (max-width: 560px) {
+  header {
+    padding-top: 38px;
+    padding-bottom: 22px;
+  }
+
+  header,
+  main,
+  footer,
+  .nav-inner {
+    width: calc(100% - 32px);
+  }
+
+  main {
+    padding-top: 27px;
+  }
+
+  .members {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    padding-bottom: 10px;
+  }
+
+  .menu-links.open {
+    display: flex;
+  }
+
+  .menu-links a {
+    padding: 10px 0;
+    border-top: 1px solid var(--line);
+    box-shadow: none;
+  }
+
+  .menu-links a.active {
+    color: var(--accent);
+    font-weight: 600;
+  }
+}
+
+
+.day {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.day h3 {
+  color: var(--accent);
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.event {
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.time {
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.event p {
+  margin: 3px 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+@media (max-width: 560px) {
+  .event {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.site-logo {
+  width: 360px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 560px) {
+  .title-container {
+    gap: 14px;
+  }
+
+  .site-logo {
+    width: 360px;
+  }
+}
+</style>
+
+<body>
+
+<header>
+  <div class="title-container">
+      <h2>Boriša Kuzeljević</h2><br>
+      <h3 class="subtitle" style="margin-top: -50px; margin-bottom: -10px;">Associate professor at the <a href="http://www.dmi.uns.ac.rs">Department of Mathematics and Informatics</a>, <a href="http://www.pmf.uns.ac.rs">Faculty of Sciences</a>, <a href="http://www.uns.ac.rs">University of Novi Sad</a>.</h3>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+
+    <button
+      class="menu-toggle"
+      aria-expanded="false"
+      aria-controls="menu-links"
+      aria-label="Open navigation menu"
+      type="button">
+      ☰ Menu
+    </button>
+
+    <div class="menu-links" id="menu-links">
+      <a href="#news" class="active">News and info</a>
+      <a href="#papers">Papers</a>
+      <a href="#contact">Contact and CV</a>
+    </div>
+
+  </div>
+</nav>
+
+<main>
+
+  <section id="news" class="page active">
+
+    <article class="item">
+      <a href="conference.html">SETTOP 2027</a> will take place at our department in Novi Sad on August 23–26, 2027.
+    </article>
+
+    <article class="item">
+      Nastava u 2026/2027:
+      <ul style="margin-top: 15px;">
+        <li style="margin-top: 10px;"><a href="https://moodle.pmf.uns.ac.rs/course/view.php?id=585">Algebarska topologija</a> (studenti koji slušaju algebarsku topologiju u ovom semestru treba da mi se jave mejlom i da se prijave na moodle stranicu kursa - <a href="https://moodle.pmf.uns.ac.rs/course/view.php?id=585">link</a>)</li>
+
+        <li style="margin-top: 10px;"><a href="https://moodle.pmf.uns.ac.rs/course/view.php?id=1279">Algebarske strukture i primene</a></li>
+
+        <li style="margin-top: 10px;"><a href="https://moodle.pmf.uns.ac.rs/course/view.php?id=365">Algebra 3 (Prsteni, polja i teorija Galoa), vežbe</a></li>
+
+        <li style="margin-top: 10px;"><a href="https://moodle.pmf.uns.ac.rs/course/view.php?id=973">Uvod u matematičku logiku, vežbe</a></li>
+      </ul>
+      
+      Konsultacije organizujemo po dogovoru, možete se javiti mejlom da dogovorimo termin.
+    </article>
+
+    <article class="item">
+      <a href="http://elib.mi.sanu.ac.rs/pages/browse_issue.php?db=zr&rbr=30">Selected topics in combinatorial analysis, part II</a> - Special volume of Zbornik Radova, published by MI SANU
+    </article>
+
+    <article class="item">
+      <a href="index.html/#seminar">Seminar</a> of our group in Novi Sad
+    </article>
+
+    <article class="item">
+      <a href="https://sites.dmi.uns.ac.rs/sladim.plus/default.html">SLADIM+</a> seminar in Novi Sad (more general and more formal seminar than the one above)
+    </article>
+
+  </section>
+
+  <section id="papers" class="page">
+
+    <ol style="margin-top: -10px;">
+  
+      <li style="margin-bottom: 5px"><a href="booleanmax.pdf">Weakly Boolean maximal chains of homeomorphic topologies</a><br />
+      (with <a href="https://people.dmi.uns.ac.rs/~milos/">Milos Kurilic</a>) preprint</li>
+  
+      <li style="margin-bottom: 5px;"><a href="uniform.pdf">Uniform Homogeneity</a><br />
+      (with <a href="https://users.math.cas.cz/~kubis/">Wieslaw Kubis</a>) preprint.</li>
+  
+      <li style="margin-bottom: 5px;"><!--<a href="lists.pdf">-->A dichotomy for transitive lists</a><br />
+      (with <a href="https://roy-shalev.github.io/">Roy Shalev</a> and <a href="https://www.math.toronto.edu/cms/people/faculty/todorcevic-stevo/">Stevo Todorcevic</a>) submitted, 45 pp.</li>
+  
+      <li style="margin-bottom: 5px;"><a href="matrices.pdf">Topological groups from matrices of sets</a><br />
+      (with <a href="http://www.ftn.uns.ac.rs/1417869624">Stepan Milosevic</a> and <a href="https://www.math.toronto.edu/cms/people/faculty/todorcevic-stevo/">Stevo Todorcevic</a>) Revista de la Real Academia de Ciencias Exactas, Físicas y Naturales. Serie A. Matemáticas 120 (2026), no. 3, Paper No. 60, 21 pp.</li>
+  
+      <li style="margin-bottom: 5px;"><a href="freedigraphs.pdf">Maximal chains of copies of freely generated countable ultrahomogeneous digraphs</a><br />
+      (with <a href="http://www.ftn.uns.ac.rs/1417869624">Stepan Milosevic</a>) European Journal of Combinatorics 136 (2026), 104398, 12 pp.</li>
+  
+      <li style="margin-bottom: 5px;"><a href="survey.pdf">Order structure of P-point ultrafilters and their relatives</a><br />
+      (with <a href="https://dilip-raghavan.github.io/">Dilip Raghavan</a>) Zbornik Radova (Beograd) 22(30) (2025), Selected topics in combinatorial analysis, part II, 375-409.</li>
+  
+      <li style="margin-bottom: 5px;"><a href="km_6.pdf">Cofinal types and topological groups</a><br />
+      (with <a href="http://www.ftn.uns.ac.rs/1417869624">Stepan Milosevic</a>) Topology and its Applications 356 (2024), 109051, 12 pp.</li>
+  
+      <li style="margin-bottom: 5px;"><a href="lower.pdf">Lower bounds of sets of P-points</a><br />
+      (with <a href="https://dilip-raghavan.github.io/">Dilip Raghavan</a> and <a href="https://jonathan.temno.eu/">Jonathan Verner</a>) Notre Dame Journal of Formal Logic 64 (2023), no. 3, 317-327.</li>
+  
+      <li style="margin-bottom: 5px;"><a href="cofinal.pdf">Cofinal types on \(\omega_2\)</a><br />
+      (with <a href="https://www.math.toronto.edu/cms/people/faculty/todorcevic-stevo/">Stevo Todorcevic</a>) Mathematical Logic Quarterly 69 (2023), no. 1, 92-103.</li>
+  
+      <li style="margin-bottom: 5px;"><a href="antichains.pdf">Antichains of copies of ultrahomogeneous structures</a><br />
+      (with <a href="https://people.dmi.uns.ac.rs/~milos/">Milos Kurilic</a>) Archive for Mathematical Logic 61 (2022), no. 5-6, 867-879.</li>
+  
+      <li style="margin-bottom: 5px;"><a href="sap.pdf">Positive families and boolean chains of copies of ultrahomogeneous structures</a><br />
+      (with <a href="https://people.dmi.uns.ac.rs/~milos/">Milos Kurilic</a>) Comptes Rendus Mathematique 358 (2020), no. 7, 791-796.</li>
+  
+      <li style="margin-bottom: 5px;"><a href="pid-TK.pdf">P-ideal dichotomy and a strong form of the Souslin Hypothesis</a><br />
+      (with <a href="https://www.math.toronto.edu/cms/people/faculty/todorcevic-stevo/">Stevo Todorcevic</a>) Fundamenta Mathematicae 251 (2020), 17-33.</li>
+  
+      <li style="margin-bottom: 5px;"><a href="hypergraphs.pdf">On the structure of random hypergraphs</a><br />
+      (with <a href="https://dilip-raghavan.github.io/">Dilip Raghavan</a>) Publications de l'Institut Mathematique (Beograd) 104(118) (2018), 43--51.</li>
+    
+      <li style="margin-bottom: 5px;"><a href="RK-51.pdf">A long chain of P-points</a><br />
+      (with <a href="https://dilip-raghavan.github.io/">Dilip Raghavan</a>) Journal of Mathematical Logic 17 (2018), no. 3, 1850004, 38 pp.</li>
+    
+      <li style="margin-bottom: 5px;"><a href="mat-4-TK.pdf">Forcing with matrices of countable elementary submodels</a><br />
+      (with <a href="https://www.math.toronto.edu/cms/people/faculty/todorcevic-stevo/">Stevo Todorcevic</a>) Proceedings of the American Mathematical Society 145 (2017), no. 5, 2211-2222.</li>
+  
+      <li style="margin-bottom: 5px;"><a href="posets.pdf">Maximal chains of isomorphic suborders of countable ultrahomogeneous partial orders</a><br />
+      (with <a href="https://people.dmi.uns.ac.rs/~milos/">Milos Kurilic</a>) Order 32 (2015), no. 1, 83-99.</li>
+  
+      <li style="margin-bottom: 5px;"><a href="graphs.pdf">Maximal chains of isomorphic subgraphs of countable ultrahomogeneous graphs</a><br />
+      (with <a href="https://people.dmi.uns.ac.rs/~milos/">Milos Kurilic</a>) Advances in Mathematics 264 (2014), 762-775.</li>
+  
+      <li><a href="rado.pdf">Maximal chains of isomorphic subgraphs of the Rado graph</a> <br />
+      (with <a href="https://people.dmi.uns.ac.rs/~milos/">Milos Kurilic</a>) Acta Mathematica Hungarica 141 (2013), no. 1, 1-10.</li>
+
+    </ol>
+
+  </section>
+
+  <section id="contact" class="page">
+
+    <article class="item">
+      <p style="margin-bottom: 15px;">Office 27 on the second floor of the old DMI building.</p>
+      <p style="margin-bottom: 15px;">Department of Mathematics and Informatics<br>
+        Faculty of Sciences<br>
+        University of Novi Sad<br>
+        Trg Dositeja Obradovića 4<br>
+        Novi Sad, Serbia</p>
+      <p>borisha ' at ' dmi.uns.ac.rs</p>
+    </article>
+
+    <article class="item">
+      <p>Here is my <a href="cv_bk.pdf">CV</a></p>
+  </section>
+
+</main>
+
+<script>
+const links = document.querySelectorAll(".menu-links a");
+const pages = document.querySelectorAll(".page");
+const menuToggle = document.querySelector(".menu-toggle");
+const menuLinks = document.querySelector(".menu-links");
+
+function showPage() {
+  const requested = location.hash.slice(1) || "news";
+  const target = document.getElementById(requested);
+
+  const pageId =
+    target && target.classList.contains("page")
+      ? requested
+      : "news";
+
+  pages.forEach(page => {
+    page.classList.toggle("active", page.id === pageId);
+  });
+
+  links.forEach(link => {
+    const active = link.hash === "#" + pageId;
+
+    link.classList.toggle("active", active);
+
+    if (active) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
+}
+
+function closeMenu() {
+  menuLinks.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Open navigation menu");
+  menuToggle.textContent = "☰ Menu";
+}
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = menuLinks.classList.toggle("open");
+
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Close navigation menu" : "Open navigation menu"
+  );
+
+  menuToggle.textContent = isOpen ? "✕ Close" : "☰ Menu";
+});
+
+links.forEach(link => {
+  link.addEventListener("click", closeMenu);
+});
+
+window.addEventListener("hashchange", () => {
+  showPage();
+  closeMenu();
+});
+
+showPage();
+</script>
+
+</body>
+</html>
